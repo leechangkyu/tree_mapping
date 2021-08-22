@@ -1,1 +1,41 @@
-To bulid the reference based on the taxonomy
+
+@changkyul@alleninstitute.org
+
+This file is to show how to run the following 
+
+- run_patchseq_reference.sh
+  - run_patchseq_reference.R
+    - setup_patchseq_reference.R
+    - buil_patchseq_reference.R
+
+Please use docker image : docker://alleninst/mapping_on_hpc 
+
+Once you are on HPC,you can run
+    /bin/bash run_patchseq_reference.sh
+
+Specify the following parmeters in 'run_parchseq_referene.sh'
+
+# Folder holding FACs taxonomy-related files (input folder)
+#  - cl.final.rda or anno.feather
+
+refFolder_FACS="/allen/programs/celltypes/workgroups/rnaseqanalysis/shiny/facs_seq/mouse_V1_ALM_20180520/"
+
+# PatchSeq reference folder (output folder)
+refFolder_pseq="/allen/programs/celltypes/workgroups/rnaseqanalysis/changkyul/Mapping_PatchSeq/Ref_test/mouse_patchseq_VISp_20210412_collapsed40_cpm_hpc/"
+
+# Number of cells per cluster to keep in reference (set to Inf if you don't want to subsample)
+cellsPerCluster=1000
+
+# FACS data dendrogram filename
+completeDendFile="dend.RData"
+
+# FACS data annotation type
+annotype="feather"
+
+# TOME filename if FACS data is in TOMEformat, otherwise ""
+tomeFN=""
+
+# analysis directory which hold taxonomy info if needed
+workFolder=""
+
+
